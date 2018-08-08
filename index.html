@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+  /*  	var myArray = ["one", "two", "three"];
+for (var i = 0; i < myArray.length; i++) {   
+	  document.writeln(myArray[i]); 
+}
+    function showAlert() { 
+    	  alert("moo"); 
+    }
+    var timeID = setTimeout(showAlert, 5000);
+
+function showAlert() {   alert("moo"); }
+var timeID = setTimeout(showAlert, 5000);
+*/
+/*
+function drawText() {   document.querySelector("p").textContent += "go!"; }
+var intervalID = setInterval(drawText,  1000);
+  */
+   let randomArray = [];
+   let guessArray = [];
+   let correctGuessArray = []; 
+  
+//computer makes random numbers  
+  function randomNumbers(a){
+  for (var i = 0; i < a; i++){
+  let randomNumber = Math.floor(Math.random()*100);
+  randomArray.push(randomNumber);
+  }
+  //showRandomNumbers();
+   console.log(randomArray);
+}
+
+//Shows random numbers by computer
+  function showRandomNumbers(){
+  for (var i = 0; i < randomArray.length; i++){
+  console.log(randomArray[i]);
+  document.write(randomArray[i]);
+  document.write("<br/>")
+}
+}
+//Prompts a user to guess a number	
+ function guesses(a){
+  for (var i = 0; i < a; i++) {
+    let currentGuess = prompt("Guess a number");
+    guessArray.push(currentGuess);
+  }
+  //showGuess();
+ console.log(guessArray);
+ getMatch(randomArray,guessArray);
+}
+
+//Shows guess by user
+function showGuess() {
+  for (var i = 0; i <guessArray.length; i++) {
+    console.log(guessArray[i]);
+      document.write(guessArray[i]);
+      document.write("<br/>");
+
+  }
+
+}
+
+//Compares user's guesses to computer's random numbers
+function getMatch(a, b) {
+    var matches = [];
+
+    for ( var i = 0; i < a.length; i++ ) {
+        for ( var e = 0; e < b.length; e++ ) {
+            if ( a[i] === b[e] ) matches.push( a[i] );
+        }
+    }
+    
+    console.log(matches);
+}
+
+
+
+randomNumbers(5);
+guesses(5);
+
+    </script>
+    <body>
+    	<p class="p1"></p>
+    	<p class="p2"></p>
